@@ -16,3 +16,11 @@ class User(Base):
 
     posts: Mapped[list["Post"]] = relationship(back_populates="user")  # one to many
     profile: Mapped["Profile"] = relationship(back_populates="user")
+
+
+def __str__(self):
+    return f"{self.__class__.__name__}(id={self.id}, username={self.username})"
+
+
+def __repr__(self):
+    return str(self)
